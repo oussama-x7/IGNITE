@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { useState, useEffect, useRef } from "react";
-import { Building2, Briefcase, GraduationCap, ExternalLink } from "lucide-react";
+import { Building2, Briefcase, GraduationCap } from "lucide-react";
 
 import { getCompanies } from "../lib/api";
 import type { Database } from "../lib/database.types";
@@ -148,16 +148,7 @@ function AnimatedStat({ target, suffix = "", isText = false, start }: { target: 
 }
 
 // ─── Animated divider ───────────────────────────────────────────
-function AnimatedDivider() {
-  const { ref, visible } = useScrollReveal(0.5);
-  return (
-    <div ref={ref} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", margin: "0 auto" }}>
-      <div style={{ height: "1px", background: "linear-gradient(to right, transparent, rgba(255,255,255,0.12))", flex: 1, maxWidth: "120px", transform: visible ? "scaleX(1)" : "scaleX(0)", transformOrigin: "right", transition: "transform 0.8s ease 0.2s" }} />
-      <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#ea5a16", opacity: visible ? 1 : 0, transition: "opacity 0.4s ease 0.6s", boxShadow: "0 0 8px rgba(234,90,22,0.6)" }} />
-      <div style={{ height: "1px", background: "linear-gradient(to left, transparent, rgba(255,255,255,0.12))", flex: 1, maxWidth: "120px", transform: visible ? "scaleX(1)" : "scaleX(0)", transformOrigin: "left", transition: "transform 0.8s ease 0.2s" }} />
-    </div>
-  );
-}
+
 
 // ─── HomePage ───────────────────────────────────────────────────
 export function HomePage() {
